@@ -33,7 +33,7 @@ $(function() {
         input = parseInt(input / 100);
         input += increament;
 
-        return input + "%%" + (minute < 10 ? "0" + minute : minute) + "'" + (second < 10 ? "0" + second : second) + "\"";
+        return input + "%%d" + (minute < 10 ? "0" + minute : minute) + "'" + (second < 10 ? "0" + second : second) + "\"";
     };
 
     setInterval(function() {
@@ -43,6 +43,9 @@ $(function() {
 
         for (var i = 0; i < inputs.length; i++) {
             outputText += convertBearing(inputs[i]) + "\n";
+        }
+        if (outputText === "\n") {
+            outputText = "";
         }
         outputTextArea.val(outputText);
     }, 100);
