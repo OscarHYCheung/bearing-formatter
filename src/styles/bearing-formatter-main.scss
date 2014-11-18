@@ -1,3 +1,31 @@
-h1 {
-    color: red;
+html {
+    font-size: 10px;
+}
+html,
+body,
+main {
+    height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    text-align: center;
+    #input-output-wrapper {
+        height: 100%;
+        box-sizing: border-box;
+        padding: 5% 10%;
+        #bearing-formatter-input,
+        #bearing-formatter-output {
+            width: 45%;
+            height: 100%;
+            resize: none;
+            box-sizing: border-box;
+            font-size: 1.8rem;
+        }
+
+        #bearing-formatter-output {
+            margin-left: 3%;
+        }
+    }
 }
