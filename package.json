@@ -1,6 +1,6 @@
 {
   "name": "bearing-formatter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Convert bearing list from format 12.0345 to 12%%03'04\"",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
