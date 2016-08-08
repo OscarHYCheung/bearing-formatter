@@ -191,6 +191,16 @@ module.exports = function (grunt) {
             }
         },
 
+        inline: {
+            production: {
+                options: {
+                    uglify: true
+                },
+                src: 'dist/index.html',
+                dest: 'dist/index.html'
+            }
+        },
+
         connect: {
             options: {
                 hostname: '*'
@@ -223,7 +233,8 @@ module.exports = function (grunt) {
         'clean:production',
         'copy:production',
         'concurrent:production',
-        'autoprefixer:production'
+        'autoprefixer:production',
+        'inline:production'
     ]);
 
     grunt.registerTask('production', [
