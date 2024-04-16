@@ -110,6 +110,7 @@ main > section > .textarea-wrapper textarea {
     border-color: #d0d0d0;
     font-family: "Courier New";
     padding-left: 37px;
+    white-space: nowrap;
 }
 
 @media (min-width: 768px) {
