@@ -16,31 +16,35 @@
             return "Invalid Input Format";
         }
 
-        var input = parseFloat(inputStr);
+        let input = parseFloat(inputStr);
         input = parseInt((input * 10000).toFixed(0));
         if (isNaN(input)) {
             return "Invalid Input Format";
         }
 
-        let increment = 0;
-        let second = input % 100;
-        if (second >= 60) {
-            increment = parseInt(second / 60);
-            second = second % 60;
+        let carry = 0;
+        let seconds = input % 100;
+        if (seconds >= 60) {
+            carry = parseInt(seconds / 60);
+            seconds = seconds % 60;
+        }
+
+        input = parseInt(input / 100);
+        let minutes = input % 100;
+        minutes += carry;
+        if (minutes >= 60) {
+            carry = parseInt(minutes / 60);
+            minutes = minutes % 60;
+        } else {
+            carry = 0;
         }
         input = parseInt(input / 100);
-        input += increment;
+        input += carry;
 
-        increment = 0;
-        let minute = input % 100;
-        if (minute >= 60) {
-            increment = parseInt(minute / 60);
-            minute = minute % 60;
-        }
-        input = parseInt(input / 100);
-        input += increment;
-
-        return `${input}%%d${(minute < 10 ? "0" + minute : minute)}'${(second < 10 ? "0" + second : second)}"`;
+        const secondText = seconds < 10 ? `0${seconds}` : seconds;
+        const minuteText = minutes < 10 ? `0${minutes}` : minutes;
+        const degreeText = input;
+        return `${degreeText}%%d${minuteText}'${secondText}"`;
     };
 
     const alignLineNumbers = () => {
