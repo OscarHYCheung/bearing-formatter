@@ -1,6 +1,6 @@
 {
   "name": "bearing-formatter",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Convert a bearing list from format 12.0345 to 12%%03'04\"",
   "scripts": {
     "serve": "serve ."
