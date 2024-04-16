@@ -54,6 +54,23 @@ main > section .textarea-wrapper {
     position: relative;
 }
 
+main > section .textarea-wrapper .line-numbers {
+    padding: 1.5rem 0.5rem 1.5rem 1rem;
+    font-family: "Courier New";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    display: inline-flex;
+    width: auto;
+    flex-direction: column;
+    text-align: right;
+    position: absolute;
+    border: 2px solid transparent;
+    overflow: hidden;
+    color: #666;
+}
+
 main > section > .textarea-wrapper textarea {
     width: 100%;
     height: 100%;
@@ -64,6 +81,7 @@ main > section > .textarea-wrapper textarea {
     border-radius: 0.5rem;
     border-color: #d0d0d0;
     font-family: "Courier New";
+    padding-left: 37px;
 }
 
 main > section > .textarea-wrapper #copy-btn {

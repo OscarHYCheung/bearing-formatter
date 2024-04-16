@@ -53,10 +53,13 @@
       <div id="toast" class="show">No output</div>
       <section>
         <div class="textarea-wrapper">
+          <div class="line-numbers" id="input-line-numbers">
+            <span>1:</span>
+          </div>
           <textarea
             id="bearing-formatter-input"
             type="text"
-            placeholder="One input per row, in a format of 123.0456"
+            placeholder="123.0456"
           ></textarea>
         </div>
         <div class="textarea-wrapper output-textarea-wrapper">
@@ -64,10 +67,13 @@
             <img src="/src/images/icon-copy.svg" alt="Copy button icon" />
             <span>Copy</span>
           </button>
+          <div class="line-numbers" id="output-line-numbers">
+            <span>1:</span>
+          </div>
           <textarea
             id="bearing-formatter-output"
             type="text"
-            placeholder="One output per row, in a format of 123.0456 123%%d04'56&quot;"
+            placeholder="123%%d04'56&quot;"
           ></textarea>
         </div>
       </section>
