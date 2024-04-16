@@ -16,20 +16,34 @@ main {
 main #input-output-wrapper {
     height: 100%;
     box-sizing: border-box;
-    padding: 5% 10%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 main #input-output-wrapper #bearing-formatter-input,
 main #input-output-wrapper #bearing-formatter-output {
-    width: 45%;
+    flex: 1;
     height: 100%;
     resize: none;
     box-sizing: border-box;
     font-size: 1.8rem;
     font-family: "Courier New";
     line-height: 2.2rem;
+    padding: 1.5rem 2rem;
 }
 
 main #input-output-wrapper #bearing-formatter-output {
-    margin-left: 3%;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    main #input-output-wrapper {
+        flex-direction: row;
+        padding: 2rem;
+        column-gap: 2rem;
+    }
+    main #input-output-wrapper #bearing-formatter-output {
+        margin-top: 0;
+    }
 }
