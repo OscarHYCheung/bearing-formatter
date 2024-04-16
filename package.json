@@ -2,9 +2,15 @@
   "name": "bearing-formatter",
   "version": "1.0.0",
   "description": "Convert a bearing list from format 12.0345 to 12%%03'04\"",
+  "scripts": {
+    "serve": "serve ."
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:oscarhycheung/bearing-formatter.git"
   },
-  "author": "Oscar Cheung <oscarhycheung@gmail.com>"
+  "author": "Oscar Cheung <oscarhycheung@gmail.com>",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
 }
