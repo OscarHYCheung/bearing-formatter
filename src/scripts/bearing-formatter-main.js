@@ -86,18 +86,28 @@
     }
     inputTextArea.addEventListener("input", convert);
 
+    let afRequest;
     inputTextArea.addEventListener("scroll", () => {
-        requestAnimationFrame(() => {
+        if (afRequest) {
+            cancelAnimationFrame(afRequest);
+        }
+        afRequest = requestAnimationFrame(() => {
             inputLineNumbers.scrollTop = inputTextArea.scrollTop;
             outputLineNumbers.scrollTop = outputTextArea.scrollTop;
             outputTextArea.scrollTop = inputTextArea.scrollTop;
+            afRequest = null;
         });
     }, { passive: true });
     outputTextArea.addEventListener("scroll", () => {
-        requestAnimationFrame(() => {
+        if (afRequest) {
+            cancelAnimationFrame(afRequest);
+        }
+        afRequest = requestAnimationFrame(() => {
+            isUpdatingScrollPosition = true;
             inputLineNumbers.scrollTop = outputTextArea.scrollTop;
             inputTextArea.scrollTop = outputTextArea.scrollTop;
             outputLineNumbers.scrollTop = outputTextArea.scrollTop;
+            afRequest = null;
         });
     }, { passive: true });
 
