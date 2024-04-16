@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bearing Format Convertor</title>
     <link
       rel="apple-touch-icon"
@@ -49,17 +50,32 @@
   </head>
   <body>
     <main>
-      <section id="input-output-wrapper">
-        <textarea
-          id="bearing-formatter-input"
-          type="text"
-          placeholder="Inputs in format 123.0456 each per row"
-        ></textarea>
-        <textarea
-          id="bearing-formatter-output"
-          type="text"
-          placeholder="Outputs in format 123%%d04'56&quot; each per row"
-        ></textarea>
+      <div id="toast" class="show">No output</div>
+      <section>
+        <div class="textarea-wrapper">
+          <div class="line-numbers" id="input-line-numbers">
+            <span>1:</span>
+          </div>
+          <textarea
+            id="bearing-formatter-input"
+            type="text"
+            placeholder="123.0456"
+          ></textarea>
+        </div>
+        <div class="textarea-wrapper output-textarea-wrapper">
+          <div class="line-numbers" id="output-line-numbers">
+            <span>1:</span>
+          </div>
+          <textarea
+            id="bearing-formatter-output"
+            type="text"
+            placeholder="123%%d04'56&quot;"
+          ></textarea>
+        </div>
+        <button id="copy-btn">
+          <img src="/src/images/icon-copy.svg" alt="Copy button icon" />
+          <span>Copy</span>
+        </button>
       </section>
     </main>
     <script
