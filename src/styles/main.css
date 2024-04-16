@@ -1,5 +1,6 @@
 html {
     font-size: 10px;
+    font-family: system-ui;
 }
 html,
 body,
@@ -84,7 +85,7 @@ main > section .textarea-wrapper {
 
 main > section .textarea-wrapper .line-numbers {
     padding: 1.5rem 0.5rem 1.5rem 1rem;
-    font-family: "Courier New";
+    font-family: "Courier New", system-ui;
     position: absolute;
     left: 0;
     top: 0;
@@ -108,7 +109,7 @@ main > section > .textarea-wrapper textarea {
     border-width: 2px;
     border-radius: 0.5rem;
     border-color: #d0d0d0;
-    font-family: "Courier New";
+    font-family: "Courier New", system-ui;
     padding-left: 37px;
     white-space: nowrap;
 }
