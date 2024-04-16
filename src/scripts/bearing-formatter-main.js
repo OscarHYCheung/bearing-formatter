@@ -2,16 +2,21 @@
     const inputTextArea = document.querySelector("#bearing-formatter-input");
     const outputTextArea = document.querySelector("#bearing-formatter-output");
 
+    const inputRegex = /^\s*(\d+|\.\d+|\d+\.\d*)\s*$/;
     const convertBearing = (inputStr) => {
         inputStr = inputStr.trim();
         if (!inputStr) {
             return "";
         }
 
+        if (!inputRegex.test(inputStr)) {
+            return "Invalid Input Format";
+        }
+
         var input = parseFloat(inputStr);
         input = parseInt((input * 10000).toFixed(0));
         if (isNaN(input)) {
-            return "Error Format";
+            return "Invalid Input Format";
         }
 
         let increment = 0;
