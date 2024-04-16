@@ -1,5 +1,4 @@
 (() => {
-    console.log("bearing-formatter-main.js loaded");
     const inputTextArea = document.querySelector("#bearing-formatter-input");
     const outputTextArea = document.querySelector("#bearing-formatter-output");
 
@@ -36,7 +35,7 @@
         return `${input}%%d${(minute < 10 ? "0" + minute : minute)}'${(second < 10 ? "0" + second : second)}"`;
     };
 
-    setInterval(() => {
+    const convert = () => {
         const inputText = inputTextArea.value;
         const inputs = inputText.split("\n");
         const outputs = inputs.map((inputRow) => {
@@ -45,5 +44,41 @@
 
         const outputText = outputs.join("\n");
         outputTextArea.value = outputText;
-    }, 100);
+    }
+    inputTextArea.addEventListener("input", convert);
+
+    let toastTimer = null;
+    let enlargeTimer = null;
+    const showToast = (message) => {
+        const toast = document.querySelector("#toast");
+        toast.innerText = message;
+        toast.classList.add("shown");
+        toast.classList.add("enlarge");
+
+        if (toastTimer) {
+            clearTimeout(toastTimer);
+        }
+        if (enlargeTimer) {
+            clearTimeout(enlargeTimer);
+        }
+        toastTimer = setTimeout(() => {
+            toast.classList.remove("shown");
+        }, 3000);
+        enlargeTimer = setTimeout(() => {
+            toast.classList.remove("enlarge");
+        }, 100);
+    }
+
+    const copyButton = document.querySelector("#copy-btn");
+    copyButton.addEventListener("click", () => {
+        const outputText = outputTextArea.value;
+        if (!outputText) {
+            showToast("No output to copy");
+            return;
+        }
+
+        outputTextArea.select();
+        document.execCommand("copy");
+        showToast("Copied");
+    });
 })();

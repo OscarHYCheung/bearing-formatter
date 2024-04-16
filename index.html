@@ -50,17 +50,26 @@
   </head>
   <body>
     <main>
-      <section id="input-output-wrapper">
-        <textarea
-          id="bearing-formatter-input"
-          type="text"
-          placeholder="Inputs in format 123.0456 each per row"
-        ></textarea>
-        <textarea
-          id="bearing-formatter-output"
-          type="text"
-          placeholder="Outputs in format 123%%d04'56&quot; each per row"
-        ></textarea>
+      <div id="toast" class="show">No output</div>
+      <section>
+        <div class="textarea-wrapper">
+          <textarea
+            id="bearing-formatter-input"
+            type="text"
+            placeholder="One input per row, in a format of 123.0456"
+          ></textarea>
+        </div>
+        <div class="textarea-wrapper output-textarea-wrapper">
+          <button id="copy-btn">
+            <img src="/src/images/icon-copy.svg" alt="Copy button icon" />
+            <span>Copy</span>
+          </button>
+          <textarea
+            id="bearing-formatter-output"
+            type="text"
+            placeholder="One output per row, in a format of 123.0456 123%%d04'56&quot;"
+          ></textarea>
+        </div>
       </section>
     </main>
     <script
